@@ -1,0 +1,168 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb, a4, verbatim}
+\usepackage[german]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc} % üöäß
+\usepackage{listings} % für inline codelistings
+\lstset{%
+	basicstyle=\ttfamily,	% the size of the fonts 
+	columns=fixed,			% anything else is horrifying
+	showspaces=false,	    % show spaces using underscores?
+	showstringspaces=false,	% underline spaces within strings?
+	showtabs=false,			% show tabs within strings?
+	xleftmargin=1.5em,		% left margin space
+}
+\lstdefinestyle{inline}{basicstyle=\ttfamily}
+\newcommand{\listline}[1]{\lstinline[style=inline]!#1!}
+
+
+\usepackage{caption}
+\newcommand{\tinycaption}[1]{\captionsetup{labelformat=empty}\caption{#1}}
+
+%\usepackage{color}
+%\usepackage{epsfig} % eps
+\usepackage{graphicx} % eps
+%\usepackage[shortcuts]{extdash}
+%\usepackage{dsfont}
+%\usepackage{epstopdf} % eps
+%\usepackage[pdf]{pstricks} % eps
+%\usepackage{auto-pst-pdf}
+\usepackage{mathtools}
+\usepackage{dsfont} % $ \mathds{1} $
+%\usepackage{icomma}
+\usepackage{tikz}
+%\usepackage{pgfplots}
+%\pgfplotsset{compat=1.8}
+\usepackage[bottom]{footmisc} % put footnotes at the bottom of page
+\usepackage{nicefrac} % für brüche die aussehen wie prozentzeichen
+% \usepackage{ps2pdf}
+\usetikzlibrary{automata,positioning}
+
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+
+\usepackage{multicol}
+\usepackage{wrapfig} % make stuff float
+\usepackage{placeins} % stop stuff from floating
+\usepackage{seqsplit} % very long numbers
+\usepackage{framed} % begin{framed}
+
+%  Headings and Footings :
+\usepackage{fancyhdr}
+\headheight15pt
+\lhead{Numerik II, \ueberschrift}
+
+\chead{}
+\rhead{\thepage}
+\renewcommand{\headrulewidth}{.4pt}
+
+\lfoot{\today}
+\cfoot{}
+\rfoot{Joshua}
+\renewcommand{\footrulewidth}{.4pt}
+
+%----------------------------------------------------------------
+
+\textwidth16.5cm
+\oddsidemargin0.cm
+\evensidemargin0.cm
+
+\def\somedistanceTop{3cm}
+\def\somedistanceLeft{2cm}
+
+\usepackage{geometry}
+\geometry{
+%	a4paper,
+%	total={170mm,257mm},
+	left=\somedistanceLeft,
+	right=\somedistanceLeft,
+	top=\somedistanceTop,
+	bottom=\somedistanceTop
+}
+
+
+\parindent0cm
+
+\usepackage{cancel}
+
+\newcommand{\R}{ {\mathbb R} }
+\newcommand{\C}{ {\mathbb C} }
+\newcommand{\1}{ {\mathds{1}} }
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\xt}{\tilde{x}}
+\newcommand{\dotleq}{\dot{\leq}}
+\newcommand{\m}{\hphantom{-} }
+
+\newcommand{\dashfill}[1]{\vspace{11pt}\def\dashfill{\cleaders\hbox{#1}\hfill}\hbox to \hsize{\dashfill\hfil}\vspace{11pt}}
+\newcommand{\scdot}{\!\cdot\!}
+
+
+\newcommand{\sig}{\text{signum}}
+\newcommand{\rot}{}
+
+% ------------------  edit Ueberschrift ---------------------
+\newcommand{\ueberschrift}{Numerik II Notizen}
+
+
+\usepackage{mathpazo}
+\usepackage[mathpazo]{flexisym}
+\usepackage{breqn}
+
+\usepackage{pdfpages}
+%\usepackage{showframe}
+% -----------------------------------------------------------
+\begin{document}
+	\pagestyle{fancy}
+	
+	\include{ue1}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
