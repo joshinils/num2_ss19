@@ -3,9 +3,13 @@ ue1:
 1.Aufgabe:
 \begin{equation}
 \begin{split}
-b \in \left\{ x_1 \cdot \begin{pmatrix*} 1\\ 1\\ 1 \end{pmatrix*} + x_2 \cdot \begin{pmatrix*} 1\\ -2\\ -1 \end{pmatrix*} | x_1, x_2 \in \R \right\}
+	b \in \left\{ x_1 \cdot \begin{pmatrix*} 1\\ 1\\ 1 \end{pmatrix*} + x_2 \cdot \begin{pmatrix*} 1\\ -2\\ -1 \end{pmatrix*} | x_1, x_2 \in \R \right\}
 \end{split}
 \end{equation}
+Da $b$ aber eben nicht Element dieser Menge ist, gibt es keine Lösung.
+Man möchte, dass $Ax^\star$ möglichst nahe daran liegt.
+
+
 eine möglichst \glqq gute\grqq{} Lösung könnte sinnvollerweise foglendes erfüllen:
 
 \[
@@ -65,7 +69,7 @@ Orthogonale Projektion:
 \begin{equation}\begin{split}
 	v \in V = \R^m \quad ; \quad u \in U = \R^n\\
 	v \stackrel{P_u}{\mapsto} \lambda_1u_1 + ... + \lambda_nu_n \\ %\sum_{i=1}^{n} u_i\cdot u_i^T \cdot v	
-	\text{mit } \lambda_i = <v; u_i>u_i\\
+	\text{mit } \lambda_i = <v; u_i>\\
 	&\square
 \end{split}\end{equation}
 
@@ -82,6 +86,17 @@ Orthogonale Projektion:
 	f'(x) = Jacobi(f) &= -2\scalprod{b}{A \scdot \vec{1}}  + 2\scalprod{Ax}{A\scdot \vec{1}}\\
 	f''(x) = Hess(f) &= 2\scalprod{A \scdot \vec{1}}{A \scdot \vec{1}}\\
 \end{split}\end{equation}
+
+
+Hinweis zu 3b)
+
+$B \coloneqq Hess = 2A^T\cdot A $. Daher $x^TBx = x^TA^TAx = $ ... $\geq 0$. 
+kann nur Null werden, wenn $Ax = 0 ... Kern(A) ...$.
+
+Hinweis zu 3c)
+
+$f(x+h) = \scalprod{b-A(x+h)}{b-A(x+h)} = ... = f(x) + f'(x) \cdot h + 1/2 h' Hess_f h$
+
 
 
 4. Aufgabe:
