@@ -5,7 +5,16 @@ f_beta  = @(t) sin(pi/3.*t);
 
 t = [1;2;3];
 y = [2;0;-3];
-[alpha, beta] = ue1_5(t, y);
+
+A = zeros(length(t), 2);
+for i = 1:length(t)
+	A(i,:) = [f_alpha(t(i)), f_beta(t(i))];
+end
+
+
+x = linAusQR(A, y);
+x = ue1_5(A, y);
+alpha = x(1); beta =x(2);
 
 hold('on');
 plot(t, y, 'ro');

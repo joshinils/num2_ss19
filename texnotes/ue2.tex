@@ -1,0 +1,65 @@
+\section*{2. Übung}
+\subsection*{2.1. Aufgabe}
+Zu zeigen:
+\begin{equation}\begin{split}
+	A^TAx = 0 \Leftrightarrow Ax = 0
+\end{split}\end{equation}
+
+
+\subsection*{2.2. Aufgabe}
+\begin{equation}\begin{split}
+	A &= \begin{pmatrix}
+		-1 & 1\\
+		2 & 4\\
+		-2 & -1
+	\end{pmatrix}\\
+	&= Q\cdot R\\
+	&\stackrel{\text{\lstinline|Matlab|}}{=}
+	\underbrace{
+		\nicefrac{1}{3}\begin{pmatrix}
+		-1&2&-2\\
+		2&2&1\\
+		-2&1&2
+	\end{pmatrix}}_{Q}
+	\cdot
+	\begin{pmatrix*}
+		3&3\\
+		0&3\\
+		0&0
+	\end{pmatrix*}
+\end{split}\end{equation}
+
+Minimale 2-Norm des Residuums?
+\begin{equation}\begin{split}
+	\norm{b-Ax}_2^2 &= \norm{\underbrace{Q^Tb}_{c} -Rx}_2^2\\
+	&=
+	\norm{\begin{pmatrix}
+			c_1\\
+			c_2
+		\end{pmatrix}
+		-\begin{pmatrix}
+			R_1\\
+			\vec{0}
+		\end{pmatrix}
+		\scdot x
+	}_2^2 \\
+	&= \norm{c_1 -R_1x}_2^2 + \norm{c_2 -\vec{0}x}\\
+\end{split}\end{equation}
+
+nun könnte für $\norm{c_1 -R_1x}_2^2$ ein x gefunden werden, da aber $\norm{c_2 \quad\cancelto{0}{-\vec{0}x}\quad} \geq 0$ ist, kann das Residuum nur minimal $\norm{c_2}_2^2$ werden.
+
+Hier also:
+\begin{equation}\begin{split}
+	Q^Tb &= \begin{pmatrix}
+		-1\\2\\1
+	\end{pmatrix}\\
+	c_2 &= 1 \Rightarrow
+	\norm{c_2}_2^2 = 1
+\end{split}\end{equation}
+
+
+
+\subsection*{2.3. Aufgabe}
+\begin{equation}\begin{split}
+	eq
+\end{split}\end{equation}

@@ -121,10 +121,16 @@
 \usepackage{pdfpages}
 %\usepackage{showframe}
 % -----------------------------------------------------------
+
+
+%\texttt{} num.num.alph as headings
+\renewcommand{\thesubsubsection}{\thesubsection.\alph{subsubsection}}
+
 \begin{document}
 	\pagestyle{fancy}
 	
 	\include{ue1}
+	\include{ue2}
 
 \end{document}
 
