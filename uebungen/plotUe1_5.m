@@ -13,7 +13,7 @@ end
 
 
 x = linAusQR(A, y);
-x = ue1_5(A, y);
+x = linAusTransA(A, y);
 alpha = x(1); beta =x(2);
 
 hold('on');
