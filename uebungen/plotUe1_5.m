@@ -11,9 +11,11 @@ for i = 1:length(t)
 	A(i,:) = [f_alpha(t(i)), f_beta(t(i))];
 end
 
+% % test error
+% A=[1,5;1,5;1,5];
 
 x = linAusQR(A, y);
-x = linAusTransA(A, y);
+%x = linAusTransA(A, y);
 alpha = x(1); beta =x(2);
 
 hold('on');
