@@ -1,7 +1,0 @@
-function [ x ] = linAusQR( A, b )
-
-[Q, R1] = qr(A,1);
-c_1 = Q'*b
-
-end
-
