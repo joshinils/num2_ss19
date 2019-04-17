@@ -2,9 +2,14 @@
 \subsection*{2.1. Aufgabe}
 Zu zeigen:
 \begin{equation}\begin{split}
-	A^TAx = 0 \Leftrightarrow Ax = 0
+	A^TAx = 0 &\Leftrightarrow Ax = 0\\
 \end{split}\end{equation}
-
+bzw. $Rang(A) = n \stackrel{?}{\Leftrightarrow} Rang(A^TA) = 0$
+oder auch $Kern(A) = Kern(A^TA)$
+schon klar:
+\begin{equation}\begin{split}
+	Ax = 0 &\Rightarrow A^TAx = 0 \quad \checkmark
+\end{split}\end{equation}
 
 \subsection*{2.2. Aufgabe}
 \begin{equation}\begin{split}
@@ -70,6 +75,12 @@ Zeige, $R_1$ ist regulär, gdw. $Rang(A) = n$.
 
 
 
+
+d.h. zeige, dass $Rang(A) = n \stackrel{?}{\Leftrightarrow} R_1 \text{regulär} \Leftrightarrow Rang(R_1) = n \Leftrightarrow Rang(R) = n
+\stackrel{Q \text{regulär}}{\Leftrightarrow} Rang(QR) = n 
+\Leftrightarrow Rang(A) = n$
+
+Da $Q$ orthogonal, wird der Rang von $A$ nicht geändert.
 
 
 
