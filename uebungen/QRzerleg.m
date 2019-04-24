@@ -6,7 +6,8 @@ function [Q_final, R, Q] = QRzerleg(A_input)
     for i = 1:size(A_input, 1)
         fprintf('\niteration %i\n', i);
         y = A{i}(:, i);
-        v = y + sign(y(i)) * norm(y) * identity(:, i);
+        y(1:i-1) = 0;
+        v = y + sign(y(i)) * norm(y) * identity(:, i)
         Q{i} = eye(length(v)) - 2 * (v*v') / (norm(v)^2);
         printQi = Q{i}
         A{i+1} = Q{i}*A{i};
