@@ -22,18 +22,48 @@ A = [4, 1, -2,  2;
 % 
 % Q*y
 
-[Q, R] = QRzerleg(A)
+[Q, R, Qcellarray] = QRzerleg(A);
 
-Q*R
+fprintf('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n');
+Q
+R
 
-Q*A
+Q_mal_R = Q*R
+QT_mal_R = Q'*R
 
-Q' - Q
+Q_mal_A = Q*A
+QT_mal_A = Q'*A
+
+QT_minus_Q = Q' - Q
+QT_mal_Q = Q' * Q
 
 for i = 1:length(Q)
-    norm(Q(i,:))
+    n(i) = norm(Q(i,:));
 end
+normenDerSpalten = n
 
-Q * A - R
+Q_mal_A_minusR = Q * A - R
+
+
+nicht_symmetrischA = Qcellarray{2} * Qcellarray{1}
+nicht_symmetrischB = Qcellarray{1} * Qcellarray{2}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

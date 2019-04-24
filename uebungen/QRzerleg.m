@@ -1,13 +1,19 @@
-function [Q, R] = QRzerleg(A)
-    y = A(:, 1);
-    v = y + sign(y(1)) * norm(y) * eye(length(y), 1);
-    Q = eye(length(v)) - 2 * (v*v') / (norm(v)^2);
-    R = Q*A
-    if size(A, 1) > 1
-        [Qn, Rn] = QRzerleg(R(2:end, 2:end))
-        Qn = [1,                    zeros(1, length(Qn));
-              zeros(length(Qn), 1),                   Qn  ];
-        Q = Qn * Q;
+function [Q_final, R, Q] = QRzerleg(A_input)
+    A{1} = A_input;
+    identity = eye(length(A_input));
+    
+    Q_final = identity;
+    for i = 1:size(A_input, 1)
+        fprintf('\niteration %i\n', i);
+        y = A{i}(:, i);
+        v = y + sign(y(i)) * norm(y) * identity(:, i);
+        Q{i} = eye(length(v)) - 2 * (v*v') / (norm(v)^2);
+        printQi = Q{i}
+        A{i+1} = Q{i}*A{i};
+        Q_final = Q{i} * Q_final
     end
-    R = Q*A;
+    fprintf('\n\n\n');
+    celldisp(Q);
+    celldisp(A);
+    R = Q_final' * A_input
 end % function
