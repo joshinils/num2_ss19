@@ -9,7 +9,7 @@ base = (limit_end)^(1/100);
 logb = @(x) log(x)/log(base);
 
 
-x = logspace(0, log10(limit_end), 1e2)';
+x = logspace(0, log10(limit_end), 1e6)';
 y = logb(x);
 
 plot(x, y, 'g');
@@ -48,6 +48,7 @@ for i = 1:nPieces
 end
 maxErr
 
+return;
 figure;
 plot(x_quad{1}, y_quad{1}, 'b');
 hold on;
