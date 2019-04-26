@@ -5,4 +5,6 @@ A = rand(n,n);
 [Q,R] = QRzerleg2(A);
 [q,r] = qr(A);
 
-max(max(abs(Q-q)))
+qErr = max(max(abs(Q-q)))
+rErr = max(max(abs(R-r)))
+aErr = max(max(abs(A - Q*R)))
