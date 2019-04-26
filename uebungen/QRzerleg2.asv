@@ -1,0 +1,15 @@
+function [Q, R] = QRzerleg2(A)
+    R = zeros(size(A));
+    for i = 1:(size(A, 1)-1)
+        v = A(:,1);
+        v(1) = v(1) + sign(v(1)) * norm(v);
+        Q_fast = 2*(v*v')/(v'*v);
+        Q = eye()
+        A = A - Q_fast*A;
+        R(i,i:end) = A(1,:);
+        A(1,:) = [];
+        A(:,1) = [];
+    end
+    R(end, end) = A(end, end);
+    Q = R;
+end % function
