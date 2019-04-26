@@ -8,3 +8,4 @@ A = rand(n,n);
 qErr = max(max(abs(Q-q)))
 rErr = max(max(abs(R-r)))
 aErr = max(max(abs(A - Q*R)))
+

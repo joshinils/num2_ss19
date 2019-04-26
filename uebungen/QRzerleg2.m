@@ -4,8 +4,9 @@ function [Q, R] = QRzerleg2(A)
     for i = 1:(size(A, 1)-1)
         v = A(:,1);
         v(1) = v(1) + sign(v(1)) * norm(v);
-        Q(:,i:end) = Q(:,i:end) - (Q(:,i:end) * (2*(v)/(v'*v))) * v'; %hmm_v3
-% falsch        Q(i:end,:) = (eye(length(v),length(v)) - 2*(v*v')/(v'*v)) * Q(i:end,:) ; %hmm_v4
+        %Q(:,i:end) = Q(:,i:end) - (Q(:,i:end) * (2*(v)/(v'*v))) * v'; %hmm_v3
+        %Q(:,i:end) = ((eye(length(v),length(v)) - 2*(v*v')/(v'*v)) * Q(:,i:end)')' ; %hmm_v4
+        Q(:,i:end) = (Q(:,i:end)' - 2*v/(v'*v) *(v'*Q(:,i:end)') )' ; %hmm_v5
         A = A - 2*(v)/(v'*v)*(v'*A);
         
         % copy relevant bits of A into final R
