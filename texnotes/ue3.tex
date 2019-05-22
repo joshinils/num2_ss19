@@ -1,0 +1,163 @@
+\section*{SVD}
+\begin{equation}\begin{split}
+    A &= U \Sigma V\\
+    A\cdot A^T u &= \lambda u \\
+    A^T \cdot A v &= \lambda v
+\end{split}\end{equation}
+Die ersten $p$ Eigenwerte von $A$, $A^TA$ und $AA^T$ sind identisch.
+
+Die $i$-ten Eigenvektoren von $A^TA$ und respektive $AA^T$ sind die $i$-ten Spalten von $U$ und $V$.
+
+Die Diagonale von $\Sigma$ sind $\sigma_{ii} = \sigma_{i} = \sqrt{\lambda_i}$
+
+\section*{3. Übung}
+\subsection*{3.1.i Aufgabe}
+\begin{equation}\begin{split}
+    AV = VD \\
+    \Rightarrow
+    A \cdot v_i = \lambda_i \cdot v_i\\
+    \Leftrightarrow 
+    A \cdot v_i = v_i \cdot \lambda_i \\
+\end{split}\end{equation}
+d.h.
+
+\subsection*{3.1.ii Aufgabe}
+Zu zeigen: für EW $v_i$ von $A$
+\begin{equation}\begin{split}
+	A^T = A &\Rightarrow v_i \bot v_j \quad\forall i \neq j\\
+	&\Leftrightarrow \scalprod{v_i}{v_j} = \vec{0}
+\end{split}\end{equation}
+Tipp: Berechnen Sie zu zwei Eigenvektoren $v_1$ und $v_2$ das Skalarprodukt $\scalprod{v_1}{Av_2}$ und benutzen Sie die Identität $\scalprod{x}{Ax} = \scalprod{A^Tx}{y}$.
+
+\begin{equation}\begin{split}
+	...
+\end{split}\end{equation}
+
+\subsection*{3.4.a Aufgabe}
+
+\begin{equation}\begin{split}
+    A 
+    &= 
+    \begin{pmatrix}
+    	1&1\\
+    	1&1\\
+    \end{pmatrix}\\
+    A^TA 
+    &= 
+	\begin{pmatrix}
+		2&2\\
+		2&2\\
+	\end{pmatrix}\\
+	&\Rightarrow \lambda_1 = 0, \lambda_2 = 4\\
+    &\Rightarrow v_1 = \begin{pmatrix}-1\\1\end{pmatrix}, v_2 = \begin{pmatrix}1\\1\end{pmatrix}\\
+    \text{Sortiere: ... }&\leadsto\\
+    AA^T 
+    &= 
+	\begin{pmatrix}
+		2&2\\
+		2&2\\
+	\end{pmatrix} \quad analog\\
+	&\Rightarrow
+	U = V 
+	=
+	\begin{pmatrix}
+		\sqrt{2}&-\sqrt{2}\\
+		 \sqrt{2}&\sqrt{2}\\
+	\end{pmatrix}\\
+	&D 
+	=
+	 \begin{pmatrix}
+		\sqrt{\lambda_1}& 0 \\
+		0 & \sqrt{\lambda_2}
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		0&0\\
+		0&2
+	\end{pmatrix}\\
+	\Rightarrow
+	A 
+	&= 
+	\begin{pmatrix}
+		\sqrt{2}&-\sqrt{2}\\
+		\sqrt{2}&\sqrt{2}\\
+	\end{pmatrix}
+	\cdot
+	\begin{pmatrix}
+		2&0\\
+		0&0
+	\end{pmatrix}
+	\cdot 
+	\begin{pmatrix}
+		\sqrt{2}&-\sqrt{2}\\
+		\sqrt{2}&\sqrt{2}\\
+	\end{pmatrix}^T\\
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+	b &= \begin{pmatrix}3\\3\end{pmatrix}\\
+	\leadsto 
+	Ax &= b\\
+	\Leftrightarrow
+	U \Sigma V^T  x &= b\\
+	\Leftrightarrow
+	\Sigma V^T x &= U^T b\\
+	\Leftrightarrow
+	V^T x &= \Sigma^+ U^T b\\
+	x &= V \Sigma^+ U^T b\\
+	\Leftrightarrow
+	x &=
+	\begin{pmatrix}
+		\sqrt{2}&-\sqrt{2}\\
+		\sqrt{2}&\sqrt{2}\\
+	\end{pmatrix}
+	\cdot 
+	\begin{pmatrix}
+		\nicefrac{1}{2}&0\\
+		0&0
+	\end{pmatrix}
+	\cdot	
+	\begin{pmatrix}
+		\sqrt{2}&-\sqrt{2}\\
+		\sqrt{2}&\sqrt{2}\\
+	\end{pmatrix}^T
+	\cdot 
+	\begin{pmatrix}3\\3\end{pmatrix}\\
+	x &\stackrel{Matlab}{=}
+	\begin{pmatrix}
+		\nicefrac{1}{3}\\\nicefrac{1}{3}
+	\end{pmatrix}
+\end{split}\end{equation}
+oder alternativ einfacher:
+
+\begin{equation}\begin{split}
+    A\in \R^{n\times n} \text{regulär}, Ax &= b\\
+    x = A^{-1} b &= V\Sigma^{-1}U^T\cdot b\\
+    &=\sum_{i=1}^{p=r}\frac{1}{\sigma_i} v_i \cdot \left(u_i^Tb\right)\\
+    \Rightarrow 
+    x = 
+    \nicefrac{1}{2}
+    \begin{pmatrix}
+	    \sqrt{2}\\\sqrt{2}
+    \end{pmatrix}
+    \cdot 
+    \left(
+   		\begin{pmatrix}
+   			\sqrt{2}\\\sqrt{2}
+   		\end{pmatrix}^T
+   		\begin{pmatrix}
+	   		3\\3
+   		\end{pmatrix}
+	\right)
+\end{split}\end{equation}
+
+
+
+
+
+
+
+
+
+
+
