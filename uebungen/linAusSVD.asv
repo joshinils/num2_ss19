@@ -1,0 +1,13 @@
+function [ x ] = linAusSVD( A, b )
+    [U,S,V] = svd(A);
+    
+    tol = sqrt(numel(A))*eps;
+    
+    x = zeros(size(A,2));
+    for i = 1:length(x)
+        if S(i,i)/
+            break;
+        end
+    end
+end
+
