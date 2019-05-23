@@ -152,6 +152,89 @@ oder alternativ einfacher:
 \end{split}\end{equation}
 
 
+\subsection*{3.4.b Aufgabe}
+
+\begin{equation}\begin{split}
+    A &= \begin{pmatrix}
+	    -1&1\\
+	    2&0\\
+	    1&0
+    \end{pmatrix}\\
+    AA^T
+    &=
+    \begin{pmatrix}
+	    2&-2&-1\\
+	    -2&4&2\\
+	    -1&2&1
+    \end{pmatrix}\\
+    A^TA
+    &=
+    \begin{pmatrix}
+	    6&-1\\
+	    -1&1
+    \end{pmatrix}\\
+    \det\left(AA^T-\lambda \1\right)
+    &=
+    (6-\lambda)(1-\lambda) -1 \stackrel{!}{=} 0\\
+    \Leftrightarrow
+    \lambda^2 -7\lambda + 5 &= 0\\
+    \Rightarrow
+    \lambda_{1/2} 
+    &=
+    \nicefrac{7}{2} \pm \sqrt{\frac{7^2}{4} -5}
+    =
+	\nicefrac{7}{2} \pm \frac{\sqrt{29}}{2}
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+	\left(A^TA-\lambda\1\right)\underline{v_1} &\stackrel{!}{=} \underline{0}\\
+	\Rightarrow
+	\begin{pmatrix}
+		6-\lambda_1&-1\\-1&1-\lambda_1
+	\end{pmatrix}
+	\begin{pmatrix}
+		v_{11}\\v_{12}
+	\end{pmatrix}
+	&=
+	\begin{pmatrix}
+		0\\0
+	\end{pmatrix}\\
+	\Rightarrow
+	\begin{pmatrix}
+		6-\nicefrac{7}{2} - \frac{\sqrt{29}}{2} & -1\\
+		-1 & 1 -\nicefrac{7}{2} - \frac{\sqrt{29}}{2}
+	\end{pmatrix}
+	v_1
+	&=
+	0\\
+	\Rightarrow
+	\begin{pmatrix}
+		\nicefrac{5}{2} - \frac{\sqrt{29}}{2} & -1\\
+		-1 & -\nicefrac{5}{2} - \frac{\sqrt{29}}{2}
+	\end{pmatrix}
+	v_1
+	&=
+	0\\
+	\Rightarrow
+	\begin{pmatrix}
+		\nicefrac{5}{2} - \frac{\sqrt{29}}{2} & -1\\
+		-1 \cdot (\nicefrac{5}{2} - \frac{\sqrt{29}}{2}) & (-\nicefrac{5}{2} - \frac{\sqrt{29}}{2})\cdot(\nicefrac{5}{2} - \frac{\sqrt{29}}{2})
+	\end{pmatrix}
+	v_1
+	&=
+	0\\
+	\stackrel{\text{sum}}{\Rightarrow}
+	(-\nicefrac{5}{2} - \frac{\sqrt{29}}{2})\cdot(\nicefrac{5}{2} - \frac{\sqrt{29}}{2}) \cdot v_{12} &= 0\\
+	\Rightarrow v_{12} &= 0\\
+	\Rightarrow v_1 = \underline{0}
+\end{split}\end{equation}
+
+
+
+
+
+
+
 
 
 
