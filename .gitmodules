@@ -1,3 +1,6 @@
 [submodule "pa1"]
 	path = pa1
 	url = https://github.com/joshinils/num2_ss19_pa1
+[submodule "pa2"]
+	path = pa2
+	url = C:/Users/Joshua/Desktop/math/num2_ss19/num2_ss19_pa2/.git
