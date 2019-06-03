@@ -5,3 +5,6 @@
 [submodule "pa2"]
 	path = pa2
 	url = https://github.com/joshinils/num2_ss19_pa2
+[submodule "pa2_bericht"]
+	path = pa2_bericht
+	url = https://github.com/joshinils/num2_ss19_pa2_bericht
