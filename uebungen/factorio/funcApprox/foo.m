@@ -13,7 +13,8 @@ n = 10; % amount of nodes
 
 % tschebyschow nodes:
 k = linspace(1, n, n)';
-x_i = sort(  (limit_start + limit_end)/2 + (limit_end -limit_start)/2 * cos( (2*k -1)/(2*n)*pi )  );
+tk = cos( (2*k -1)/(2*n)*pi )
+x_i = sort(  (limit_start + limit_end)/2 + (limit_end -limit_start)/2 * cos( (2*k -1)/(2*n)*pi )  )
 f_i = logb(x_i);
 
 %% berechne koeffizienten
@@ -37,7 +38,7 @@ end
 %% Plot P and points
 
 subplot(2,1,1);
-plot(x_i, f_i, 'ob', 'HandleVisibility', 'off');
+semilogx(x_i, f_i, 'ob', 'DisplayName', 'Tschebyschew Knoten');
 hold on;
 xP = logspace(log10(1),log10(limit_end), 1e4);
 yP = zeros(length(xP),1);
@@ -58,6 +59,7 @@ legend('Location','SouthEast');
 xlabel('x');
 ylabel('y');
 
+title('funktion und approximation');
 
 %% plot error
 
@@ -67,6 +69,7 @@ plot(xP, err, '.r-');
 xlabel('x');
 ylabel('fehler');
 legend('|f-P(f)| = error');
+title('fehler');
 
 [max_fehler, fehlerIndex] = max(err)
 worstApproxX = xP(fehlerIndex)
