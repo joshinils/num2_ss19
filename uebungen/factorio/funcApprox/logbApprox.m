@@ -16,7 +16,6 @@ k = linspace(1, n, n)';
 tk = cos( (2*k -1)/(2*n)*pi )
 % according to: https://en.wikipedia.org/wiki/Chebyshev_nodes#Definition
 x_i = sort(  (limit_start + limit_end)/2 + (limit_end -limit_start)/2 * cos( (2*k -1)/(2*n)*pi )  )
-x_i(1)=22.8643526713838;
 f_i = logb(x_i);
 
 %% berechne koeffizienten
