@@ -1,20 +1,154 @@
-\begin{minipage}[tc]{\linewidth}
-	Lineares Ausgleichsproblem:
-	\begin{tabular}{cl}
-		\begin{tabular}{r|c|c|c|c}
-			$t_i$ & 0 & 1 & 2 & 3 \\ 
-			\hline 
-			$y_i$ & 3 & $2,14$ & 1,8 & 1,72 \\ 
-		\end{tabular}  & Daten \\ 
-		func & Modellfunktion \\ 
-	\end{tabular} 
-\end{minipage}
-
-\begin{minipage}[tc]{\linewidth}
-	Satz: 1.1: \linebreak[3]
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+	\textbf{Lineares Ausgleichsproblem}: \linebreak[3]
+	Daten:
+	\begin{tabular}{r|c|c|c|c}
+		$t_i$ & 0 & 1 & 2 & 3 \\ 
+		\hline 
+		$y_i$ & 3 & 2,14 & 1,8 & 1,72 \\ 
+	\end{tabular}
+	\mbox{Modellfunktion}:
+	$\displaystyle y(t) = \alpha\frac{1}{1+t} +\beta$
+	\begin{dmath}
+		A = \begin{pmatrix}
+			y(t_1 = 0)\\
+			y(1)\\
+			y(2)\\
+			y(t_n = 3)\\
+		\end{pmatrix}
+		\cdot
+		\begin{pmatrix}
+			\alpha\\
+			\beta
+		\end{pmatrix}
+		\hiderel{;}\linebreak[2]
+		b \hiderel{=}
+		\begin{pmatrix}
+			y_1 = 3\\
+			2,14\\
+			1,86\\
+			y_n = 1,72
+		\end{pmatrix}
+		\linebreak[3]
+		\leadsto
+		\begin{pmatrix}
+			1&1\\
+			\nicefrac{1}{2}&1\\
+			\nicefrac{1}{3}&1\\
+			\nicefrac{1}{4}&1\\
+		\end{pmatrix}
+		\cdot
+		\begin{pmatrix}
+			\alpha\\
+			\beta
+		\end{pmatrix}
+		\hiderel{=}
+		\begin{pmatrix}
+			y_1 = 3\\
+			2,14\\
+			1,86\\
+			y_n = 1,72
+		\end{pmatrix}
+	\end{dmath}
+\end{minipage}}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+	\textbf{Satz: 1.1}: \linebreak[3]
 	$x^*\in \R$ ist genau dann eine Lösung des linearen Ausgleichsproblems, 
 	wenn $x^*$ Lösung der Normalgleichung $A^TAx = A^Tb$ ist.
 	Es gibt mindestens eine Lösung $x^*$.
 	Sie ist eindeutig, gdw. $Rang(A) = n$.
-\end{minipage}
+\end{minipage}}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+	\textbf{Satz: 1.2}: \linebreak[3]
+	Sei $A\in\R^{m\times n}$, $b\in\R^{m}$ mit QR-Zerlegung von $A$, 
+	$Rang(A)\equiv n$, 
+	$A=QR$, $R = \begin{pmatrix} R_1\\ 0 \end{pmatrix}$, 
+	\mbox{$R_1\in\R^{n\times n}$}
+	und $\begin{pmatrix}c_1\\c_2\end{pmatrix} \coloneqq Q^Tb$ mit \mbox{$c_1\in\R^n$}, 
+	\mbox{$c_2\in\R^{m-n}$}. \linebreak[3]
+	Dann gilt: \linebreak[3]
+	$R_1$ ist regulär und \linebreak[3]
+	\mbox{$x^* = R_1^{-1}\cdot c_1$} ist die eindeutige Lösung des Linearen Ausgleichsproblems $\norm{b-Ax}^2_2 = min$.
+	Außerdem gilt: $\norm{b-Ax}_2 = \norm{c_2}$
+\end{minipage}}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+	\textbf{Hessenbergmatrix durch Householder-Reflexion}: \linebreak[3]
+	Mithilfe einer Householder-Reflexion, dargestellt durch Matrixmultiplikation $Q_u \cdot A$, 
+	kann ein Teil der Matrix zu null transformiert werden. 
+	
+	Mit $v$ als Spaltenvektor von $A$, welcher die erste Spalte enthält, 
+	wird \mbox{$u \coloneqq v + \text{sgn}(v_1)\scdot e_1\scdot \norm{v}$}~gewählt ($\text{sgn}(.)$ ist die Vorzeichenfunktion, jedoch muss bei 0 nicht 0 genommen werden!).
+	Damit wird \mbox{$\displaystyle Q_u \coloneqq \1_{m\times m} -2\cdot \frac{u\cdot u^T}{u^T\cdot u}$} definiert, welche $A$ so verdrehspiegelt, 
+	dass alle Elemente in der ersten Spalte unterhalb der Diagonalen verschwinden.
+	
+	Nun kann man weiter vorgehen und die Teilmatrix von $A$ hernehmen, welche die erste Zeile und Spalte gestrichen hat und darauf weiter agieren. Am ende hätte man mindestens eine obere rechte Dreiecksmatrix. 
+	Das Produkt aller verwendeten $Q$ wäre dann eine orthogonale Matrix, womit $Q\cdot R = A$ als QR\nobreakdash-Zerlegung entstanden ist.
+\end{minipage}}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+	\textbf{Eigenschaften der Householder-Reflexion}:
+	\begin{itemize}
+		\item[label] description
+		\item[label] description
+		\item[label] description
+	\end{itemize}
+\end{minipage}}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+Algorithmus: \textbf{QR-Verfahren mit Spektralverschiebung}
+	\begin{algorithmic}[1]
+		\State $A_0 = P^T\cdot A\cdot P$ 
+		\Statex{$\triangleright\quad$ Tridiagonaltransformation}
+		\For{$k = 0, 1, ... $}
+		\State wähle $\mu_k\in\R$
+		\State $A_k -\mu_k\1 = Q_k\cdot R_k$
+		\Statex{$\triangleright\quad$ QR-Zerlegung}
+		\State $A_{k+1} = R_k \cdot Q_k + \mu_k\1 $ 
+		\Statex{$\triangleright\quad = Q_k^T A_k Q_k$}
+		\EndFor
+	\end{algorithmic}
+\end{minipage}}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+	Algorithmus: \textbf{Vektoriteration}
+	\begin{algorithmic}[1]
+		\label{bar label}
+		\State wähle $ x^{(0)} \in \R $, setze $y^{(0)} = \nicefrac{x^{(0)}}{\norm{x^{(0)}}_2}$
+		\For{$k = 0, 1, ... $}
+		\State $ x^{k+1} = A\cdot y^{(k)}$
+		\State $\lambda^{(k)} = {y^{(k)}}^T \cdot x^{(k)}$
+		\State $ y^{k+1} = \displaystyle\frac{x^{(k+1)}}{\norm{x^{(k+1)}}_2}$
+		\EndFor
+	\end{algorithmic}
+\end{minipage}}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+	Algorithmus: \textbf{Inverse Vektoriteration mit Spektralverschiebung}
+	\begin{algorithmic}[1]
+		\label{bar label}
+		\State wähle $ x^{(0)} \in \R $, setze $y^{(0)} = \nicefrac{x^{(0)}}{\norm{x^{(0)}}_2}$
+		\For{$k = 0, 1, ... $}
+		\State Löse LGS \;$ \left( A-\mu\1 \right) x^{(k+1)} = y^{(k)} $ 
+		\Statex{$\triangleright\quad\Leftrightarrow x^{(k+1)} = \left( A-\mu\1 \right)^{-1} \cdot y^{(k)}$}
+		\State $\lambda^{(k+1)} = \displaystyle\frac{1}{{y^{(k)}}^T \cdot x^{(k)}} + \mu$
+		\State $ y^{k+1} = \displaystyle\frac{x^{(k+1)}}{\norm{x^{(k+1)}}_2}$
+		\EndFor
+	\end{algorithmic}
+\end{minipage}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

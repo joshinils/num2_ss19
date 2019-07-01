@@ -74,7 +74,7 @@
 
 \usepackage{geometry}
 \geometry{
-	a4paper, % or A3, etc if to print smaller
+	a5paper, % or A3, etc if to print smaller
 %	total={170mm,257mm},
 	left=\somedistanceLeft,
 	right=\somedistanceLeft,
@@ -119,6 +119,7 @@
 
 \usepackage{url}
 
+\usepackage{blindtext}
 \usepackage{pdfpages}
 %\usepackage{showframe}
 % -----------------------------------------------------------
@@ -138,10 +139,15 @@
 	\belowdisplayshortskip=7pt plus 0pt minus 7pt
 	
 	% line between collumns
-	\setlength{\columnsep}{5mm}
-	\setlength{\columnseprule}{1pt}
-	\begin{multicols}{2}
+	\setlength{\columnsep}{2pt}
+%	\setlength{\columnseprule}{1pt}
+	\begin{multicols}{1}
 		\input{spicker01}
+		
+		\blindmathtrue
+		\blindmathpaper
+		\blindtext
+%		\Blindtext
 	\end{multicols}
 
 \end{document}
