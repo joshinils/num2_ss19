@@ -8,6 +8,11 @@ limit_start = 1;
 limit_end = 3e5;
 base = (limit_end)^(1/100); % of the log, meaning logb(limit_end) := 100 
 logb = @(x) log(x)/log(base);
+%ableitung
+logbA1 = @(x) 1 ./ (x .* log(base));
+logbA2 = @(x) - 1 ./ (x .^ 2 .* log(base));
+logbA3 = @(x) 2 ./ (x .^ 3 .* log(base));
+
 
 n = 10; % amount of nodes
 

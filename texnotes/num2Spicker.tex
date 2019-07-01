@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+\documentclass[12pt]{article}
 
 \usepackage{amsmath,amssymb, a4, verbatim}
 \usepackage[german]{babel}
@@ -50,36 +50,37 @@
 \usepackage{framed} % begin{framed}
 
 %  Headings and Footings :
-\usepackage{fancyhdr}
-\headheight15pt
-\lhead{Numerik II, \ueberschrift}
+%\usepackage{fancyhdr}
+%\headheight15pt
+%\lhead{Numerik II, \ueberschrift}
 
-\chead{}
-\rhead{\thepage}
-\renewcommand{\headrulewidth}{.4pt}
+%\chead{}
+%\rhead{\thepage}
+%\renewcommand{\headrulewidth}{.4pt}
 
-\lfoot{\today}
-\cfoot{}
-\rfoot{Joshua}
-\renewcommand{\footrulewidth}{.4pt}
+%\lfoot{\today}
+%\cfoot{}
+%\rfoot{Joshua}
+%\renewcommand{\footrulewidth}{.4pt}
 
 %----------------------------------------------------------------
 
-\textwidth16.5cm
-\oddsidemargin0.cm
-\evensidemargin0.cm
+%\textwidth16.5cm
+%\oddsidemargin0.cm
+%\evensidemargin0.cm
 
-\def\somedistanceTop{3cm}
-\def\somedistanceLeft{2cm}
+\def\somedistanceLeft{10mm}%2cm}
+\def\somedistanceTop{10mm}%3cm}
 
 \usepackage{geometry}
 \geometry{
-%	a4paper,
+	a4paper, % or A3, etc if to print smaller
 %	total={170mm,257mm},
 	left=\somedistanceLeft,
 	right=\somedistanceLeft,
 	top=\somedistanceTop,
-	bottom=\somedistanceTop
+	bottom=\somedistanceTop,
+	landscape % better i think
 }
 
 
@@ -127,9 +128,21 @@
 \renewcommand{\thesubsubsection}{\thesubsection.\alph{subsubsection}}
 
 \begin{document}
-	\pagestyle{fancy}
+	\pagestyle{empty} % no line numbers
+
+	% equation spacing
+	\def\distEQ{12pt}
+	\abovedisplayskip=\distEQ plus 0pt minus \distEQ
+	\abovedisplayshortskip=0pt plus 0pt
+	\belowdisplayskip=\distEQ plus 0pt minus \distEQ
+	\belowdisplayshortskip=7pt plus 0pt minus 7pt
 	
-	\input{spicker01}
+	% line between collumns
+	\setlength{\columnsep}{5mm}
+	\setlength{\columnseprule}{1pt}
+	\begin{multicols}{2}
+		\input{spicker01}
+	\end{multicols}
 
 \end{document}
 
