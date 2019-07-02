@@ -74,13 +74,13 @@
 
 \usepackage{geometry}
 \geometry{
-	a5paper, % or A3, etc if to print smaller
+	a4paper, % or A3, etc if to print smaller
 %	total={170mm,257mm},
 	left=\somedistanceLeft,
 	right=\somedistanceLeft,
 	top=\somedistanceTop,
 	bottom=\somedistanceTop,
-	landscape % better i think
+%	landscape % better i think
 }
 
 
@@ -143,12 +143,15 @@
 %	\setlength{\columnseprule}{1pt}
 
 
-	\begin{multicols}{1}
+	\begin{multicols}{2}
+		\newboolean{doraggedright} %Deklaration
+		\setboolean{doraggedright}{true} %Zuweisung
 		\input{spicker01}
+		\input{spickerInterpolation}
 		
-		\blindmathtrue
-		\blindmathpaper
-		\blindtext
+%		\blindmathtrue
+%		\blindmathpaper
+%		\blindtext
 %		\Blindtext
 	\end{multicols}
 

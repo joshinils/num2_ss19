@@ -1,4 +1,4 @@
-\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 	\textbf{Lineares Ausgleichsproblem}: \linebreak[3]
 	Daten:
 	\begin{tabular}{r|c|c|c|c}
@@ -7,7 +7,7 @@
 		$y_i$ & 3 & 2,14 & 1,8 & 1,72 \\ 
 	\end{tabular}
 	\mbox{Modellfunktion}:
-	$\displaystyle y(t) = \alpha\frac{1}{1+t} +\beta$
+	$ y(t) = \alpha\nicefrac{1}{1+t} +\beta$
 	\begin{dmath*}
 		A = \begin{pmatrix}
 			y(t_1 = 0)\\
@@ -50,14 +50,14 @@
 		\end{pmatrix}
 	\end{dmath*}
 \end{minipage}}
-\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 	\textbf{Satz: 1.1}: \linebreak[3]
 	$x^*\in \R$ ist genau dann eine Lösung des linearen Ausgleichsproblems, 
 	wenn $x^*$ Lösung der Normalgleichung $A^TAx = A^Tb$ ist.
 	Es gibt mindestens eine Lösung $x^*$.
 	Sie ist eindeutig, gdw. $Rang(A) = n$.
 \end{minipage}}
-\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 	\textbf{Satz: 1.2}: \linebreak[3]
 	Sei $A\in\R^{m\times n}$, $b\in\R^{m}$ mit QR-Zerlegung von $A$, 
 	$Rang(A)\equiv n$, 
@@ -70,20 +70,18 @@
 %	\mbox{$x^* = R_1^{-1}\cdot c_1$} ist die eindeutige Lösung des Linearen Ausgleichsproblems $\norm{b-Ax}^2_2 = min$.
 	Außerdem gilt: $\norm{b-Ax}_2 = \norm{c_2}$.
 \end{minipage}}
-\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 	\textbf{Hessenbergmatrix durch Householder-Reflexion}: \linebreak[3]
 	Mithilfe einer Householder-Reflexion, dargestellt durch Matrixmultiplikation $Q_u \cdot A$, 
-	kann ein Teil der Matrix zu null transformiert werden. 
-	
+	kann ein Teil der Matrix zu null transformiert werden.\linebreak[3]	
 	Mit $v$ als Spaltenvektor von $A$, welcher die erste Spalte enthält, 
 	wird \mbox{$u \coloneqq v + \text{sgn}(v_1)\scdot e_1\scdot \norm{v}$}~gewählt ($\text{sgn}(.)$ ist die Vorzeichenfunktion, jedoch muss bei 0 nicht 0 genommen werden!).
-	Damit wird \mbox{$\displaystyle Q_u \coloneqq \1_{m\times m} -2\cdot \frac{u\cdot u^T}{u^T\cdot u}$} definiert, welche $A$ so verdrehspiegelt, 
-	dass alle Elemente in der ersten Spalte unterhalb der Diagonalen verschwinden.
-	
+	Damit wird \mbox{$ Q_u \coloneqq \1_{m\times m} -2\cdot (u\cdot u^T)/(u^T\cdot u)$} definiert, welche $A$ so verdrehspiegelt, 
+	dass alle Elemente in der ersten Spalte unterhalb der Diagonalen verschwinden. \linebreak[3]	
 	Nun kann man weiter vorgehen und die Teilmatrix von $A$ hernehmen, welche die erste Zeile und Spalte gestrichen hat und darauf weiter agieren. Am ende hätte man mindestens eine obere rechte Dreiecksmatrix. 
 	Das Produkt aller verwendeten $Q$ wäre dann eine orthogonale Matrix, womit $Q\cdot R = A$ als QR\nobreakdash-Zerlegung entstanden ist.
 \end{minipage}}
-\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 	\textbf{Eigenschaften der Householder-Reflexion}:
 	\vspace{-\topsep}
   	\begin{itemize}
@@ -94,7 +92,7 @@
 		\item[(iii)] $Q_v^T = Q_v^{-1} \Rightarrow Q_v$ ist Orthogonal
 	\end{itemize}
 \end{minipage}}
-\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 	Eine \textbf{Givensrotation} von $
 	A = 
 	\begin{pmatrix}
@@ -116,8 +114,8 @@
 	r&\star\\0&\star
 	\end{pmatrix}$
 \end{minipage}}
-\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
-	\textbf{Nicht Lineares Ausgleichsproblem}: \linebreak[3]
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
+	\textbf{Nichtlineares Ausgleichsproblem}: \linebreak[3]
 	\mbox{Daten}:
 	\begin{tabular}{r|c|c|c|c}
 		$t_i$ & 0 & 1 & 2 \\ 
@@ -125,16 +123,16 @@
 		$y_i$ & 2 & -3 & 4 \\ 
 	\end{tabular}
 	\mbox{Modellfunktion}:
-	\mbox{$\displaystyle y(t) = x_1 \sin(x_2 \cdot t)$}
+	\mbox{$ y(t) = x_1 \sin(x_2 \cdot t)$}
 	\begin{dmath*}
-		\phi(t, x) \hiderel{=} y(t)\\
-		F_i \hiderel{=} y_i - \phi(t_i, x)\\
-		F(x)
+		\varphi(t, x) \hiderel{=} y(t)\\
+		F_i \hiderel{=} y_i - \varphi(t_i, x)\\
+		\R^{n} \ni F(x)
 		\hiderel{=}
 		\begin{pmatrix}
-			2&-1\\
-			-3&-x_1\sin(x_2)\\
-			4&-x_1\sin(2x_2)
+			2-0\\
+			-3-x_1\sin(x_2)\\
+			4-x_1\sin(2x_2)
 		\end{pmatrix}\\
 		J_F(x)
 		\hiderel{=}
@@ -145,7 +143,7 @@
 		\end{pmatrix}
 	\end{dmath*}
 \end{minipage}}
-\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 Algorithmus: \textbf{Gauß-Newton-Verfahren}
 	\begin{algorithmic}[1]
 		\State Wähle Startvektor $x^{(0)}\in\R$ 
@@ -156,7 +154,7 @@ Algorithmus: \textbf{Gauß-Newton-Verfahren}
 		\EndFor
 	\end{algorithmic}
 \end{minipage}}
-\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 	$
 		A\in\R^{n\times n} \, s.p.d \Rightarrow
 		\exists V \in \R^{n\times n}
@@ -169,7 +167,7 @@ Algorithmus: \textbf{Gauß-Newton-Verfahren}
 	($VV^T = \1$)
 	\fbox{$AV = VD$}
 \end{minipage}}
-\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 	$A\in \R^{m\times n}$
 	$A^TA$ ist s.p.semi-d.
 	$x^TA^TAx \geq 0$
@@ -179,9 +177,72 @@ Algorithmus: \textbf{Gauß-Newton-Verfahren}
 	Dann existieren orthogonale Matrizen $U\in \R^{m\times m}$ 
 	und $V\in \R^{n\times n}$ mit \linebreak[3]
 	$U^TAV=\Sigma = diag(\sigma_1, ..., \sigma_p)
-	\Rightarrow $%\fbox{$A = U\Sigma V^T$}
+	\Rightarrow $\fbox{$A = U\Sigma V^T$}
 \end{minipage}}
-\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
+	\textbf{Anwendung der SVD}
+	\vspace{-\topsep}
+	\begin{itemize}
+	\setlength{\itemsep}{0pt}%
+	\setlength{\parskip}{0pt}
+		\item[(i)] $A^{(s)} \coloneqq \sum_{i=1}^{n}\sigma_iu_iv_i^T, s < r$ ist die beste (im Sinne der $\norm{.}_2$) Approximation von A mit dem Rang(s).
+		\item[(ii)] \textbf{Pseudoinverse \boldmath$A^+$}, $A\in \R^{m\times n}$; \linebreak[3]
+			$A = U\Sigma V^T$; \linebreak[3]
+			\mbox{$A^+ = V\Sigma^+ U^T$} mit \linebreak[3]
+			\mbox{$\Sigma^+ = 
+				\begin{pmatrix}
+					\nicefrac{1}{\sigma_1} & 0&0\\
+					0 & \nicefrac{1}{\sigma_r}&0\\
+					0&0&0
+				\end{pmatrix}
+			$}; \linebreak[3]
+			\mbox{$x = A^+b$} ist die Lösung des linearen Ausgleichsproblems \mbox{$\norm{Ax-b}_2\rightarrow min$}
+		\item[(iii)] Lösung des linearen Ausgleichsproblems für \underline{$Rang(A) < n$}
+		\item[(iv)] Regularisierung schlecht gestellter Probleme \linebreak[3]
+			\mbox{$ \hat{x} = \sum_{i=1}^{s} \nicefrac{1}{\sigma_i} v_i\scdot\left(u_i^T \scdot b\right)$}, $s < n$
+	\end{itemize}
+\end{minipage}}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
+	Algorithmus: \textbf{Vektoriteration}
+	\begin{algorithmic}[1]
+		\label{bar label}
+		\State wähle $ x^{(0)} \in \R $, setze $y^{(0)} = \nicefrac{x^{(0)}}{\norm{x^{(0)}}_2}$
+		\For{$k = 0, 1, ... $}
+		\State $ x^{k+1} = A\cdot y^{(k)}$
+		\State $\lambda^{(k)} = {y^{(k)}}^T \cdot x^{(k)}$
+		\State $ y^{k+1} = \nicefrac{x^{(k+1)}}{\norm{x^{(k+1)}}_2}$
+		\EndFor
+	\end{algorithmic}
+\end{minipage}}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
+	Algorithmus: \textbf{Inverse Vektoriteration mit Spektralverschiebung}
+	\begin{algorithmic}[1]
+		\label{bar label}
+		\State wähle $ x^{(0)} \in \R $, setze $y^{(0)} = \nicefrac{x^{(0)}}{\norm{x^{(0)}}_2}$
+		\For{$k = 0, 1, ... $}
+		\State Löse LGS \;$ \left( A-\mu\1 \right) x^{(k+1)} = y^{(k)} $ 
+		\Statex{$\triangleright\quad\Leftrightarrow x^{(k+1)} = \left( A-\mu\1 \right)^{-1} \cdot y^{(k)}$}
+		\State $\lambda^{(k+1)} = \nicefrac{1}{{y^{(k)}}^T \cdot x^{(k)}} + \mu$
+		\State $ y^{k+1} = \nicefrac{x^{(k+1)}}{\norm{x^{(k+1)}}_2}$
+		\EndFor
+	\end{algorithmic}
+\end{minipage}}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
+	Lemma zum QR-Verfahren
+	\vspace{-\topsep}
+	\begin{itemize}
+		\setlength{\itemsep}{0pt}%
+		\setlength{\parskip}{0pt}
+		\item[(i)] die Matrizen $A_k$ sind \textbf{ähnlich} zu A.
+		\item[(ii)] $A$ Symetrisch $\Rightarrow$ $A_k$ Symmetrisch.
+		\item[(iii)] $A$ tridiagonal und Symetrisch $\Rightarrow$ $A_k$ auch.
+	\end{itemize}
+	\vspace{-\topsep}
+	Zwei Matrizen $A$ und $B$ sind sich \textbf{ähnlich}, wenn es eine reguläre Matrix $S$ gibt, so dass: 
+	\mbox{$B = S^{-1} \scdot A \scdot S$} \mbox{$\Leftrightarrow SB=AS$} gilt. \linebreak[3]
+	Ähnliche Matrizen haben dasselbe Spektrum $\sigma(A) = \sigma(B)$, gleiche Spur, gleichen Rang aber nicht notwendigerweise die gleichen EV.
+\end{minipage}}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 Algorithmus: \textbf{QR-Verfahren mit Spektralverschiebung}
 	\begin{algorithmic}[1]
 		\State $A_0 = P^T\cdot A\cdot P$ 
@@ -195,31 +256,22 @@ Algorithmus: \textbf{QR-Verfahren mit Spektralverschiebung}
 		\EndFor
 	\end{algorithmic}
 \end{minipage}}
-\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
-	Algorithmus: \textbf{Vektoriteration}
-	\begin{algorithmic}[1]
-		\label{bar label}
-		\State wähle $ x^{(0)} \in \R $, setze $y^{(0)} = \nicefrac{x^{(0)}}{\norm{x^{(0)}}_2}$
-		\For{$k = 0, 1, ... $}
-		\State $ x^{k+1} = A\cdot y^{(k)}$
-		\State $\lambda^{(k)} = {y^{(k)}}^T \cdot x^{(k)}$
-		\State $ y^{k+1} = \displaystyle\frac{x^{(k+1)}}{\norm{x^{(k+1)}}_2}$
-		\EndFor
-	\end{algorithmic}
-\end{minipage}}
-\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
-	Algorithmus: \textbf{Inverse Vektoriteration mit Spektralverschiebung}
-	\begin{algorithmic}[1]
-		\label{bar label}
-		\State wähle $ x^{(0)} \in \R $, setze $y^{(0)} = \nicefrac{x^{(0)}}{\norm{x^{(0)}}_2}$
-		\For{$k = 0, 1, ... $}
-		\State Löse LGS \;$ \left( A-\mu\1 \right) x^{(k+1)} = y^{(k)} $ 
-		\Statex{$\triangleright\quad\Leftrightarrow x^{(k+1)} = \left( A-\mu\1 \right)^{-1} \cdot y^{(k)}$}
-		\State $\lambda^{(k+1)} = \displaystyle\frac{1}{{y^{(k)}}^T \cdot x^{(k)}} + \mu$
-		\State $ y^{k+1} = \displaystyle\frac{x^{(k+1)}}{\norm{x^{(k+1)}}_2}$
-		\EndFor
-	\end{algorithmic}
-\end{minipage}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

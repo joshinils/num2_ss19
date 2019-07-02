@@ -1,0 +1,91 @@
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
+	\textbf{Lagrange-Fundamental-Polynom} \linebreak[3]
+	Seien Stützpunkte \mbox{$\left(x_i, f_i\right)$} \mbox{$i = 0,.. , n$} gegeben:\linebreak[3]
+	Suche Polynome \mbox{$\ell_j \in \Pi_n, j = 0, .., n $} mit \linebreak[3]
+	\mbox{$\ell_j(x_k) = \left\{
+	\begin{array}{c}
+		1 : j = k\\
+		0 : j \neq k
+	\end{array}\right.$}; \linebreak[3]
+	\mbox{$\displaystyle P\left(f|x_0, .., x_n\right)(x) \stackrel{?!}{=} \sum_{j=0}^{n} f_j \cdot \ell_j(x)$}; \linebreak[3]
+	\mbox{$
+		\displaystyle
+		\ell_j =  \prod_{\begin{smallmatrix}i=0\\i\neq j\end{smallmatrix}}^n \frac{x-x_i}{x_j-x_i}$}
+\end{minipage}}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
+	\textbf{Newton-Basis}: \linebreak[3]
+	$ \displaystyle P\left(f|x_0, .., x_n\right)(x) = \sum_{i=0}^{n}b_i \omega_i(x) = \sum_{i=0}^{n}b_i \prod_{p=0}^{j} \left( x - x_p\right)$ \linebreak[3]
+	$ \displaystyle b_k = f_{[x_0, .., x_k]}$ \linebreak[3]
+	$ \displaystyle f_{[x_r, .., x_s]} = \left(f_{[x_{r+1}, .., x_s]} - f_{[x_r, .., x_{s-1}]} \right) / \left(x_r - x_s\right)$ \linebreak[3]
+	$ \displaystyle \omega_j(x) = \prod_{i=0}^{j} \left( x - x_i\right), \omega_0(x) = 1$
+\end{minipage}}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
+	Algorithmus: \textbf{Horner-Schema}
+	\begin{algorithmic}[1]
+		\State $p = b_n$
+		\For{$k = n-1, .., 1, 0$}
+			\State $p = b_n + (x-x_k) \cdot p$
+		\EndFor
+	\end{algorithmic}
+\end{minipage}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
