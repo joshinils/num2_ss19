@@ -8,7 +8,7 @@
 	\end{tabular}
 	\mbox{Modellfunktion}:
 	$\displaystyle y(t) = \alpha\frac{1}{1+t} +\beta$
-	\begin{dmath}
+	\begin{dmath*}
 		A = \begin{pmatrix}
 			y(t_1 = 0)\\
 			y(1)\\
@@ -48,7 +48,7 @@
 			1,86\\
 			y_n = 1,72
 		\end{pmatrix}
-	\end{dmath}
+	\end{dmath*}
 \end{minipage}}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
 	\textbf{Satz: 1.1}: \linebreak[3]
@@ -85,11 +85,89 @@
 \end{minipage}}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
 	\textbf{Eigenschaften der Householder-Reflexion}:
-	\begin{itemize}
-		\item[label] description
-		\item[label] description
-		\item[label] description
+	\vspace{-\topsep}
+  	\begin{itemize}
+	\setlength{\itemsep}{0pt}%
+	\setlength{\parskip}{0pt}
+  		\item[(i)] $Q_v\cdot v = -v $
+		\item[(ii)] $Q_v \cdot u=u \Leftrightarrow v \bot u$
+		\item[(iii)] $Q_v^T = Q_v^{-1} \Rightarrow Q_v$ ist Orthogonal
 	\end{itemize}
+\end{minipage}}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+	Eine \textbf{Givensrotation} von $
+	A = 
+	\begin{pmatrix}
+	a_1 & *\\
+	a_2 & *
+	\end{pmatrix}$
+	kann mit
+	$r = \abs{\sqrt{a_1^2 + a_2^2}}$, $ c = \nicefrac{a_1}{r}$, $s = \nicefrac{a_2}{r}$
+	und
+	$ G
+	= \begin{pmatrix}
+	c&s\\
+	-s&c
+	\end{pmatrix}
+	$
+	erfolgen:
+	$G\cdot A = 
+	\begin{pmatrix}
+	r&\star\\0&\star
+	\end{pmatrix}$
+\end{minipage}}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+	\textbf{Nicht Lineares Ausgleichsproblem}: \linebreak[3]
+	\mbox{Daten}:
+	\begin{tabular}{r|c|c|c|c}
+		$t_i$ & 0 & 1 & 2 \\ 
+		\hline 
+		$y_i$ & 2 & -3 & 4 \\ 
+	\end{tabular}
+	\mbox{Modellfunktion}:
+	\mbox{$\displaystyle y(t) = x_1 \sin(x_2 \cdot t)$}
+	\begin{dmath*}
+		\phi(t, x) \hiderel{=} y(t)\\
+		F_i \hiderel{=} y_i - \phi(t_i, x)\\
+		F(x)
+		\hiderel{=}
+		\begin{pmatrix}
+			2&-1\\
+			-3&-x_1\sin(x_2)\\
+			4&-x_1\sin(2x_2)
+		\end{pmatrix}\\
+		J_F(x)
+		\hiderel{=}
+		\begin{pmatrix}
+			0&0\\
+			-\sin(x_2)&-x_1\cos(x_2)\\
+			-\sin(2x_2)&-2x_1\cos(2x_2)
+		\end{pmatrix}
+	\end{dmath*}
+\end{minipage}}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+Algorithmus: \textbf{Gauß-Newton-Verfahren}
+	\begin{algorithmic}[1]
+		\State Wähle Startvektor $x^{(0)}\in\R$ 
+		\For{$k = 0, 1, ... $}
+			\Statex $\triangleright$ Löse LGS nach $\Delta x^{(k)}$
+			\State $\norm{ J_F(x^{(k)}) \Delta x^{(k)} + F(x^{(k)}) }_2^2 \rightarrow min$
+			\State setze $x^{(k+1)} = x^{(k)} + \Delta x^{(k)}$
+		\EndFor
+	\end{algorithmic}
+\end{minipage}}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+	$
+		A\in\R^{n\times n} \, s.p.d \Rightarrow
+		\exists V \in \R^{n\times n}
+	$
+	orthogonal mit
+	$
+		V^TAV = D \,;\, d_{ii} = \lambda_i \geq 0
+	$
+	$\Rightarrow A = VDV^T$
+	($VV^T = \1$)
+	\fbox{$AV = VD$}
 \end{minipage}}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
 Algorithmus: \textbf{QR-Verfahren mit Spektralverschiebung}
@@ -130,6 +208,7 @@ Algorithmus: \textbf{QR-Verfahren mit Spektralverschiebung}
 		\EndFor
 	\end{algorithmic}
 \end{minipage}}
+
 
 
 
