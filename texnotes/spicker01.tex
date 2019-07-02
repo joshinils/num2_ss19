@@ -57,7 +57,8 @@
 	Es gibt mindestens eine Lösung $x^*$.
 	Sie ist eindeutig, gdw. $Rang(A) = n$.
 \end{minipage}}
-\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+\fbox{
+	\begin{minipage}[tc]{\linewidth-2\fboxsep}
 	\textbf{Satz: 1.2}: \linebreak[3]
 	Sei $A\in\R^{m\times n}$, $b\in\R^{m}$ mit QR-Zerlegung von $A$, 
 	$Rang(A)\equiv n$, 
@@ -67,9 +68,10 @@
 	\mbox{$c_2\in\R^{m-n}$}. \linebreak[3]
 	Dann gilt: \linebreak[3]
 	$R_1$ ist regulär und \linebreak[3]
-	\mbox{$x^* = R_1^{-1}\cdot c_1$} ist die eindeutige Lösung des Linearen Ausgleichsproblems $\norm{b-Ax}^2_2 = min$.
-	Außerdem gilt: $\norm{b-Ax}_2 = \norm{c_2}$
-\end{minipage}}
+%	\mbox{$x^* = R_1^{-1}\cdot c_1$} ist die eindeutige Lösung des Linearen Ausgleichsproblems $\norm{b-Ax}^2_2 = min$.
+	Außerdem gilt: $\norm{b-Ax}_2 = \norm{c_2}$.
+\end{minipage}
+}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
 	\textbf{Hessenbergmatrix durch Householder-Reflexion}: \linebreak[3]
 	Mithilfe einer Householder-Reflexion, dargestellt durch Matrixmultiplikation $Q_u \cdot A$, 
@@ -82,7 +84,8 @@
 	
 	Nun kann man weiter vorgehen und die Teilmatrix von $A$ hernehmen, welche die erste Zeile und Spalte gestrichen hat und darauf weiter agieren. Am ende hätte man mindestens eine obere rechte Dreiecksmatrix. 
 	Das Produkt aller verwendeten $Q$ wäre dann eine orthogonale Matrix, womit $Q\cdot R = A$ als QR\nobreakdash-Zerlegung entstanden ist.
-\end{minipage}}
+\end{minipage}
+}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
 	\textbf{Eigenschaften der Householder-Reflexion}:
 	\vspace{-\topsep}
@@ -170,6 +173,18 @@ Algorithmus: \textbf{Gauß-Newton-Verfahren}
 	\fbox{$AV = VD$}
 \end{minipage}}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+	$A\in \R^{m\times n}$
+	$A^TA$ ist s.p.semi-d.
+	$x^TA^TAx \geq 0$
+	
+	Satz: \textbf{Singulärwertzerlegung}: \linebreak[3]
+	Sei $A\in\R^{m\times n}$ und $p = min(m, n)$. \linebreak[3]
+	Dann existieren orthogonale Matrizen $U\in \R^{m\times m}$ 
+	und $V\in \R^{n\times n}$ mit \linebreak[3]
+	$U^TAV=\Sigma = diag(\sigma_1, ..., \sigma_p)
+	\Rightarrow $%\fbox{$A = U\Sigma V^T$}
+\end{minipage}}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
 Algorithmus: \textbf{QR-Verfahren mit Spektralverschiebung}
 	\begin{algorithmic}[1]
 		\State $A_0 = P^T\cdot A\cdot P$ 
@@ -194,7 +209,8 @@ Algorithmus: \textbf{QR-Verfahren mit Spektralverschiebung}
 		\State $ y^{k+1} = \displaystyle\frac{x^{(k+1)}}{\norm{x^{(k+1)}}_2}$
 		\EndFor
 	\end{algorithmic}
-\end{minipage}}
+\end{minipage}
+}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
 	Algorithmus: \textbf{Inverse Vektoriteration mit Spektralverschiebung}
 	\begin{algorithmic}[1]
