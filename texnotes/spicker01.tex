@@ -67,8 +67,8 @@
 	\mbox{$c_2\in\R^{m-n}$}. \linebreak[3]
 	Dann gilt: \linebreak[3]
 	$R_1$ ist regulär und \linebreak[3]
-	\mbox{$x^* = R_1^{-1}\cdot c_1$} ist die eindeutige Lösung des Linearen Ausgleichsproblems $\norm{b-Ax}^2_2 = min$.
-	Außerdem gilt: $\norm{b-Ax}_2 = \norm{c_2}$
+%	\mbox{$x^* = R_1^{-1}\cdot c_1$} ist die eindeutige Lösung des Linearen Ausgleichsproblems $\norm{b-Ax}^2_2 = min$.
+	Außerdem gilt: $\norm{b-Ax}_2 = \norm{c_2}$.
 \end{minipage}}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
 	\textbf{Hessenbergmatrix durch Householder-Reflexion}: \linebreak[3]
@@ -168,6 +168,18 @@ Algorithmus: \textbf{Gauß-Newton-Verfahren}
 	$\Rightarrow A = VDV^T$
 	($VV^T = \1$)
 	\fbox{$AV = VD$}
+\end{minipage}}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
+	$A\in \R^{m\times n}$
+	$A^TA$ ist s.p.semi-d.
+	$x^TA^TAx \geq 0$
+	
+	Satz: \textbf{Singulärwertzerlegung}: \linebreak[3]
+	Sei $A\in\R^{m\times n}$ und $p = min(m, n)$. \linebreak[3]
+	Dann existieren orthogonale Matrizen $U\in \R^{m\times m}$ 
+	und $V\in \R^{n\times n}$ mit \linebreak[3]
+	$U^TAV=\Sigma = diag(\sigma_1, ..., \sigma_p)
+	\Rightarrow $%\fbox{$A = U\Sigma V^T$}
 \end{minipage}}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}
 Algorithmus: \textbf{QR-Verfahren mit Spektralverschiebung}
