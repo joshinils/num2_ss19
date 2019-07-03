@@ -5,7 +5,7 @@ format longg;
 
 % kreisparameter
 rr = 4;
-mx= 10;
+mx= 100;
 my= 10;
 
 th = (0:pi/500:2*pi / 4)';

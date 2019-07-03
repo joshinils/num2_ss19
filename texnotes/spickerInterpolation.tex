@@ -11,14 +11,14 @@
 	\mbox{$
 		\displaystyle
 		\ell_j =  \prod_{\begin{smallmatrix}i=0\\i\neq j\end{smallmatrix}}^n \frac{x-x_i}{x_j-x_i}$}
-\end{minipage}}
+\end{minipage}}\vspace{\myspace}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 	\textbf{Newton-Basis}: \linebreak[3]
 	$ \displaystyle P\left(f|x_0, .., x_n\right)(x) = \sum_{i=0}^{n}b_i \omega_i(x) = \sum_{i=0}^{n}b_i \prod_{p=0}^{j} \left( x - x_p\right)$ \linebreak[3]
 	$ \displaystyle b_k = f_{[x_0, .., x_k]}$ \linebreak[3]
 	$ \displaystyle f_{[x_r, .., x_s]} = \left(f_{[x_{r+1}, .., x_s]} - f_{[x_r, .., x_{s-1}]} \right) / \left(x_r - x_s\right)$ \linebreak[3]
 	$ \displaystyle \omega_j(x) = \prod_{i=0}^{j} \left( x - x_i\right), \omega_0(x) = 1$
-\end{minipage}}
+\end{minipage}}\vspace{\myspace}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 	Algorithmus: \textbf{Horner-Schema}
 	\begin{algorithmic}[1]
@@ -27,18 +27,30 @@
 			\State $p = b_n + (x-x_k) \cdot p$
 		\EndFor
 	\end{algorithmic}
-\end{minipage}}
+\end{minipage}}\vspace{\myspace}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 	\textbf{Abschätzung}; \linebreak[3]
 	Satz: Seien $x_0, .., x_n$ Paarweise unterschiedliche Stützstellen, 
 	$ x_i \in [a,b] $ und $f \in C^{n+1}\left( [a, b] \right)$. \linebreak[3]
 	Dann gilt für $x \in [a, b]$ \linebreak[3]
-	$\abs{f\left( x \right) - P\left( f|x_0, .., x_n \right)(x) } \leq  \abs{ \omega_{n+1} } \displaystyle \max_{z \in [a, b]} \abs{\frac{ f^{(n+1)(z)} }{ (n+1)! }}$
+	$ \left\vert f\left( x \right) - P\left( f|x_0, .., x_n \right)(x) \right\rvert \leq  \left\lvert \omega_{n+1} \right\rvert \displaystyle \max_{z \in [a, b]} \frac{ \left\lvert f^{(n+1)}(z) \right\rvert}{ (n+1)! } $
+\end{minipage}}\vspace{\myspace}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
+	\arraycolsep=1.9pt\def\arraystretch{1.5}
+	\begin{equation*}
+%	\begin{array}
+		\centering
+		\begin{tabular}{r|c|c|c|c|c|}
+			\cline{2-6}
+			& $0^\circ$ &            $30^\circ$ &            $45^\circ$ &            $60^\circ$ & $90^\circ$ \\ \hline
+			\multicolumn{1}{|l|}{$\sin(\alpha)$} &	       0 &         $\frac{1}{2}$ & $\frac{1}{2}\sqrt{2}$ & $\frac{1}{2}\sqrt{3}$ &          1 \\ \hline
+			\multicolumn{1}{|l|}{$\cos(\alpha)$} &         1 & $\frac{1}{2}\sqrt{3}$ & $\frac{1}{2}\sqrt{2}$ &         $\frac{1}{2}$ &          0 \\ \hline
+			\multicolumn{1}{|l|}{$\tan(\alpha)$} &	       0 & $\frac{1}{3}\sqrt{3}$ &                     1 &           $\sqrt{3}$  &         -- \\ \hline
+			\multicolumn{1}{|l|}{$\cot(\alpha)$} &	      -- &            $\sqrt{3}$ &                     1 & $\frac{1}{3}\sqrt{3}$ &          0 \\ \hline
+		\end{tabular}
+%	\end{array}
+	\end{equation*}
 \end{minipage}}
-
-
-
-
 
 
 

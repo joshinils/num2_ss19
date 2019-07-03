@@ -49,14 +49,14 @@
 			y_n = 1,72
 		\end{pmatrix}
 	\end{dmath*}
-\end{minipage}}
+\end{minipage}}\vspace{\myspace}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 	\textbf{Satz: 1.1}: \linebreak[3]
 	$x^*\in \R$ ist genau dann eine Lösung des linearen Ausgleichsproblems, 
 	wenn $x^*$ Lösung der Normalgleichung $A^TAx = A^Tb$ ist.
 	Es gibt mindestens eine Lösung $x^*$.
 	Sie ist eindeutig, gdw. $Rang(A) = n$.
-\end{minipage}}
+\end{minipage}}\vspace{\myspace}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 	\textbf{Satz: 1.2}: \linebreak[3]
 	Sei $A\in\R^{m\times n}$, $b\in\R^{m}$ mit QR-Zerlegung von $A$, 
@@ -69,7 +69,7 @@
 	$R_1$ ist regulär und \linebreak[3]
 %	\mbox{$x^* = R_1^{-1}\cdot c_1$} ist die eindeutige Lösung des Linearen Ausgleichsproblems $\norm{b-Ax}^2_2 = min$.
 	Außerdem gilt: $\norm{b-Ax}_2 = \norm{c_2}$.
-\end{minipage}}
+\end{minipage}}\vspace{\myspace}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 	\textbf{Hessenbergmatrix durch Householder-Reflexion}: \linebreak[3]
 	Mithilfe einer Householder-Reflexion, dargestellt durch Matrixmultiplikation $Q_u \cdot A$, 
@@ -80,7 +80,7 @@
 	dass alle Elemente in der ersten Spalte unterhalb der Diagonalen verschwinden. \linebreak[3]	
 	Nun kann man weiter vorgehen und die Teilmatrix von $A$ hernehmen, welche die erste Zeile und Spalte gestrichen hat und darauf weiter agieren. Am ende hätte man mindestens eine obere rechte Dreiecksmatrix. 
 	Das Produkt aller verwendeten $Q$ wäre dann eine orthogonale Matrix, womit $Q\cdot R = A$ als QR\nobreakdash-Zerlegung entstanden ist.
-\end{minipage}}
+\end{minipage}}\vspace{\myspace}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 	\textbf{Eigenschaften der Householder-Reflexion}:
 	\vspace{-\topsep}
@@ -91,7 +91,7 @@
 		\item[(ii)] $Q_v \cdot u=u \Leftrightarrow v \bot u$
 		\item[(iii)] $Q_v^T = Q_v^{-1} \Rightarrow Q_v$ ist Orthogonal
 	\end{itemize}
-\end{minipage}}
+\end{minipage}}\vspace{\myspace}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 	Eine \textbf{Givensrotation} von $
 	A = 
@@ -113,7 +113,7 @@
 	\begin{pmatrix}
 	r&\star\\0&\star
 	\end{pmatrix}$
-\end{minipage}}
+\end{minipage}}\vspace{\myspace}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 	\textbf{Nichtlineares Ausgleichsproblem}: \linebreak[3]
 	\mbox{Daten}:
@@ -142,10 +142,13 @@
 			-\sin(2x_2)&-2x_1\cos(2x_2)
 		\end{pmatrix}
 	\end{dmath*}
-	$ \norm{F(x)}_2^2 \rightarrow min \approx 
+	$ 	
+		\left.
+		\norm{F(x)}_2^2 \approx 
 		\norm{ F\left(x^{(k)}\right) + J_F\left(x^{(k)}\right) \left( x- x^{(k)}\right) }_2^2
+		\right\} \rightarrow min
 	$
-\end{minipage}}
+\end{minipage}}\vspace{\myspace}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 Algorithmus: \textbf{Gauß-Newton-Verfahren}
 	\begin{algorithmic}[1]
@@ -156,7 +159,7 @@ Algorithmus: \textbf{Gauß-Newton-Verfahren}
 			\State setze $x^{(k+1)} = x^{(k)} + \Delta x^{(k)}$
 		\EndFor
 	\end{algorithmic}
-\end{minipage}}
+\end{minipage}}\vspace{\myspace}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 	$
 		A\in\R^{n\times n} \, s.p.d \Rightarrow
@@ -169,7 +172,7 @@ Algorithmus: \textbf{Gauß-Newton-Verfahren}
 	$\Rightarrow A = VDV^T$
 	($VV^T = \1$)
 	\fbox{$AV = VD$}
-\end{minipage}}
+\end{minipage}}\vspace{\myspace}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 	$A\in \R^{m\times n}$
 	$A^TA$ ist s.p.semi-d.
@@ -181,7 +184,7 @@ Algorithmus: \textbf{Gauß-Newton-Verfahren}
 	und $V\in \R^{n\times n}$ mit \linebreak[3]
 	$U^TAV=\Sigma = diag(\sigma_1, ..., \sigma_p)
 	\Rightarrow $\fbox{$A = U\Sigma V^T$}
-\end{minipage}}
+\end{minipage}}\vspace{\myspace}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 	\textbf{Anwendung der SVD}
 	\vspace{-\topsep}
@@ -204,7 +207,7 @@ Algorithmus: \textbf{Gauß-Newton-Verfahren}
 		\item[(iv)] Regularisierung schlecht gestellter Probleme \linebreak[3]
 			\mbox{$ \hat{x} = \sum_{i=1}^{s} \nicefrac{1}{\sigma_i} v_i\scdot\left(u_i^T \scdot b\right)$}, $s < n$
 	\end{itemize}
-\end{minipage}}
+\end{minipage}}\vspace{\myspace}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 	Algorithmus: \textbf{Vektoriteration}
 	\begin{algorithmic}[1]
@@ -216,7 +219,7 @@ Algorithmus: \textbf{Gauß-Newton-Verfahren}
 		\State $ y^{k+1} = \nicefrac{x^{(k+1)}}{\norm{x^{(k+1)}}_2}$
 		\EndFor
 	\end{algorithmic}
-\end{minipage}}
+\end{minipage}}\vspace{\myspace}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 	Algorithmus: \textbf{Inverse Vektoriteration mit Spektralverschiebung}
 	\begin{algorithmic}[1]
@@ -229,7 +232,7 @@ Algorithmus: \textbf{Gauß-Newton-Verfahren}
 		\State $ y^{k+1} = \nicefrac{x^{(k+1)}}{\norm{x^{(k+1)}}_2}$
 		\EndFor
 	\end{algorithmic}
-\end{minipage}}
+\end{minipage}}\vspace{\myspace}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 	Lemma zum QR-Verfahren
 	\vspace{-\topsep}
@@ -244,7 +247,7 @@ Algorithmus: \textbf{Gauß-Newton-Verfahren}
 	Zwei Matrizen $A$ und $B$ sind sich \textbf{ähnlich}, wenn es eine reguläre Matrix $S$ gibt, so dass: 
 	\mbox{$B = S^{-1} \scdot A \scdot S$} \mbox{$\Leftrightarrow SB=AS$} gilt. \linebreak[3]
 	Ähnliche Matrizen haben dasselbe Spektrum $\sigma(A) = \sigma(B)$, gleiche Spur, gleichen Rang aber nicht notwendigerweise die gleichen EV.
-\end{minipage}}
+\end{minipage}}\vspace{\myspace}
 \fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
 Algorithmus: \textbf{QR-Verfahren mit Spektralverschiebung}
 	\begin{algorithmic}[1]
@@ -258,7 +261,7 @@ Algorithmus: \textbf{QR-Verfahren mit Spektralverschiebung}
 		\Statex{$\triangleright\quad = Q_k^T A_k Q_k$}
 		\EndFor
 	\end{algorithmic}
-\end{minipage}}
+\end{minipage}}\vspace{\myspace}
 
 
 

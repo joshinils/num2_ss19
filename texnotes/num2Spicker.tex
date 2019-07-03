@@ -74,13 +74,13 @@
 
 \usepackage{geometry}
 \geometry{
-	a4paper, % or A3, etc if to print smaller
+	a3paper, % or A3, etc if to print smaller
 %	total={170mm,257mm},
 	left=\somedistanceLeft,
 	right=\somedistanceLeft,
 	top=\somedistanceTop,
 	bottom=\somedistanceTop,
-%	landscape % better i think
+	landscape % better i think
 }
 
 
@@ -91,7 +91,7 @@
 \newcommand{\R}{ {\mathbb R} }
 \newcommand{\C}{ {\mathbb C} }
 \newcommand{\1}{ {\mathds{1}} }
-\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\xt}{\tilde{x}}
 \newcommand{\dotleq}{\dot{\leq}}
@@ -105,7 +105,7 @@
 \newcommand{\rot}{}
 
 % ------------------  edit Ueberschrift ---------------------
-\newcommand{\ueberschrift}{Numerik II Notizen}
+\newcommand{\ueberschrift}{Numerik II Spicker}
 
 
 \usepackage{mathpazo}
@@ -132,18 +132,24 @@
 	\pagestyle{empty} % no line numbers
 
 	% equation spacing
-	\def\distEQ{12pt}
+	\def\distEQ{8pt}
+	\def\distEq{5pt}
 	\abovedisplayskip=\distEQ plus 0pt minus \distEQ
 	\abovedisplayshortskip=0pt plus 0pt
 	\belowdisplayskip=\distEQ plus 0pt minus \distEQ
-	\belowdisplayshortskip=7pt plus 0pt minus 7pt
+	\belowdisplayshortskip=\distEq plus 0pt minus \distEq
 	
 	% line between collumns
-	\setlength{\columnsep}{2pt}
+	\setlength{\columnsep}{8pt}
 %	\setlength{\columnseprule}{1pt}
 
 
-	\begin{multicols}{2}
+	\begin{centering}
+		Numerik II -- Spicker -- Joshua Laskowski -- \today\\%2019.06.04 \\
+	\end{centering}
+	\newlength\myspace
+	\setlength{\myspace}{ 14pt plus 0pt minus 12pt }
+	\begin{multicols}{4}
 		\newboolean{doraggedright} %Deklaration
 		\setboolean{doraggedright}{true} %Zuweisung
 		\input{spicker01}
