@@ -28,6 +28,13 @@
 		\EndFor
 	\end{algorithmic}
 \end{minipage}}
+\fbox{\begin{minipage}[tc]{\linewidth-2\fboxsep}\ifthenelse{\boolean{doraggedright}}{\raggedright}{}
+	\textbf{Abschätzung}; \linebreak[3]
+	Satz: Seien $x_0, .., x_n$ Paarweise unterschiedliche Stützstellen, 
+	$ x_i \in [a,b] $ und $f \in C^{n+1}\left( [a, b] \right)$. \linebreak[3]
+	Dann gilt für $x \in [a, b]$ \linebreak[3]
+	$\abs{f\left( x \right) - P\left( f|x_0, .., x_n \right)(x) } \leq  \abs{ \omega_{n+1} } \displaystyle \max_{z \in [a, b]} \abs{\frac{ f^{(n+1)(z)} }{ (n+1)! }}$
+\end{minipage}}
 
 
 
